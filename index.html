@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>餐饮</title>
+	<link rel="icon" href="http://smallpang.oss-cn-shanghai.aliyuncs.com/xudengweiCDN/icon/xdw1.ico">
+	<link rel="stylesheet" href="//smallpang.oss-cn-shanghai.aliyuncs.com/xudengwei/static/css/reset.css">
+	<link rel="stylesheet" href="static/css/common.css?v=1">
+	<link rel="stylesheet" href="static/css/index.css?v=1">
+	<script src="static/lib/angular/angular.min.js"></script>
+	<script src="static/js/index.js"></script>
+</head>
+<body  ng-app="jingbreakfast" ng-controller="blogindex">
+	<div class="container">
+	    <div></div>
+		<div class="ub MB-20 nav MT-10">
+			<span class="ub ub-f1 ub-ac ub-pc bg-orange FC-white" ng-click="qiehuan()">早餐</span>
+			<span class="ub ub-f1 ub-ac ub-pc bg-orange FC-white ML-10" ng-click="qiehuan()">午餐</span>
+		</div>
+		<ul ng-show="tabshow">
+		    <li class="MB-20" ng-repeat="mor_cai in data.morning">
+			    <h1 class="MB-10" ng-bind="mor_cai.tit"></h1>
+				<div class="description">
+				     <div ng-repeat="step in mor_cai.description" ng-bind="step"></div>
+                </div>
+                <img class="imglist" ng-src="{{mor_cai.img_url}}" alt="">
+			</li>  
+		</ul>
+
+		<ul ng-show="!tabshow">
+		    <li class="MB-20" ng-repeat="mor_cai in data.lunch">
+			    <h1 class="MB-10" ng-bind="mor_cai.tit"></h1>
+				<div class="description">
+				     <div ng-repeat="step in mor_cai.description" ng-bind="step"></div>
+                </div>
+                <img class="imglist" ng-src="{{mor_cai.img_url}}" alt="">
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

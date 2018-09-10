@@ -1,2 +1,1 @@
-# love-diet
-a platform of recording daily diet
+# 基于react的美食社区
